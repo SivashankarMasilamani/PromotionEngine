@@ -1,0 +1,8 @@
+/*/
+!/Source
+**/obj/**
+**/bin/**
+**/.vs/**
+**/.idea/*
+tmp/*
+!tmp/.keep
