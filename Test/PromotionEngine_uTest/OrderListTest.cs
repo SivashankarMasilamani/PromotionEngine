@@ -56,5 +56,18 @@ namespace PromotionEngine_uTest
 
             Assert.AreEqual(orderList.TotalPrice(), 220);
         }
+
+        [TestMethod]
+        public void TestIndexer()
+        {
+            OrderList orderList = new OrderList();
+            var skuA = new StoreKeepingUnit('A', 10, 10);
+            var skuB = new StoreKeepingUnit('B', 8, 15);
+            orderList.Add(skuA);
+            orderList.Add(skuB);
+
+            Assert.IsTrue(orderList['A'].Quantity == 10);
+            Assert.IsTrue(orderList['B'].Quantity == 15);
+        }
     }
 }
