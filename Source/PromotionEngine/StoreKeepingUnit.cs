@@ -23,8 +23,8 @@
         public StoreKeepingUnit(char id, int unitPrice, int quantity = 1)
         {
             Id = id;
-            UnitPrice = unitPrice;
-            Quantity = quantity;
+            UnitPrice = unitPrice < 0 ? 0 : unitPrice;
+            Quantity = quantity < 0 ? 0 : quantity;
         }
 
         /// <summary>
