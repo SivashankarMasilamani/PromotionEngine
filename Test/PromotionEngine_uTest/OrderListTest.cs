@@ -69,5 +69,15 @@ namespace PromotionEngine_uTest
             Assert.IsTrue(orderList['A'].Quantity == 10);
             Assert.IsTrue(orderList['B'].Quantity == 15);
         }
+
+        [TestMethod]
+        public void TestIndexer_ForNonExistingItem()
+        {
+            OrderList orderList = new OrderList();
+            var skuA = new StoreKeepingUnit('A', 10, 10);
+            orderList.Add(skuA);
+
+            Assert.IsNull(orderList['C']);
+        }
     }
 }

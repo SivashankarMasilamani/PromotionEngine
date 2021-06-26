@@ -5,7 +5,7 @@
         /// <summary>
         /// Items in the cart
         /// </summary>
-        OrderList orderedItems;
+        internal OrderList orderedItems;
 
         /// <summary>
         /// Constructor
