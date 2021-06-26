@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 namespace PromotionEngine
 {
     public class PromotionEngine
     {
         private readonly List<IPromotion> ActivePromotions = new List<IPromotion>();
+
+        internal PromotionEngine(List<IPromotion> promotions)
+        {
+            ActivePromotions = promotions;
+        }
 
         public PromotionEngine()
         {
