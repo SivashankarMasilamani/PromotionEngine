@@ -38,7 +38,7 @@ namespace PromotionEngine
         /// </summary>
         /// <param name="orderedItems">Order list</param>
         /// <returns>Total price after promotion discount</returns>
-        public int Apply(OrderList orderedItems)
+        public virtual int Apply(OrderList orderedItems)
         {
             // gives the total only for the units for which promotion is applied
             int partialTotal = applyPromotions(orderedItems);
