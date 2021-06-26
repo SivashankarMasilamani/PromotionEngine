@@ -8,14 +8,14 @@ namespace CheckOut
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            SKU A = new SKU('A', 50, 3);
-            SKU B = new SKU('B', 30, 5);
-            SKU C = new SKU('C', 20);
-            SKU D = new SKU('D', 15);
-            SKU E = new SKU('E', 10,3);
-            SKU F = new SKU('F', 10,2);
+            StoreKeepingUnit A = new StoreKeepingUnit('A', 50, 3);
+            StoreKeepingUnit B = new StoreKeepingUnit('B', 30, 5);
+            StoreKeepingUnit C = new StoreKeepingUnit('C', 20);
+            StoreKeepingUnit D = new StoreKeepingUnit('D', 15);
+            StoreKeepingUnit E = new StoreKeepingUnit('E', 10,3);
+            StoreKeepingUnit F = new StoreKeepingUnit('F', 10,2);
 
-            Order order = new Order();
+            Cart order = new Cart();
             order.AddSKU(A);
             order.AddSKU(B);
             order.AddSKU(C);

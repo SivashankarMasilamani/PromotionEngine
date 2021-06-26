@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-
-namespace PromotionEngine
+﻿namespace PromotionEngine
 {
     public interface IPromotion
     {
-        int Apply(SKUs Order);
+        /// <summary>
+        /// Apply the promotion to the given order list.
+        /// </summary>
+        int Apply(OrderList Order);
     }
 }

@@ -34,13 +34,13 @@ namespace PromotionEngine
             ActivePromotions.Add(EFcombinedPromotion);
         }
 
-        public int Apply(SKUs skus)
+        public int Apply(OrderList skus)
         {
             int promotionPrice = applyPromotions(skus);
             return promotionPrice + skus.TotalPrice();
         }
 
-        private int applyPromotions(SKUs skus)
+        private int applyPromotions(OrderList skus)
         {
             int totalPrice = 0;
             foreach (var promotion in ActivePromotions)
