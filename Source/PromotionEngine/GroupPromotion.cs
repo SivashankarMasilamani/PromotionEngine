@@ -47,7 +47,7 @@ namespace PromotionEngine
         {
             int noOfPromotions = 0;
 
-            if (IsApplicable(orderedItems))
+            while (IsApplicable(orderedItems))
             {
                 UpdateOrderList(orderedItems);
                 noOfPromotions++;
