@@ -21,7 +21,7 @@ namespace PromotionEngine
             Price = price;
         }
 
-        public int Apply(SKUs skus)
+        public int Apply(OrderList skus)
         {
             var sku = skus[Id];
             if (sku != null)
@@ -50,7 +50,7 @@ namespace PromotionEngine
         // 1C + 1D = 100
         private Dictionary<char, int> promotionType;
 
-        private bool IsApplicable(SKUs skus)
+        private bool IsApplicable(OrderList skus)
         {
             foreach (var key in promotionType.Keys)
             {
@@ -64,7 +64,7 @@ namespace PromotionEngine
             return true;
         }
 
-        private int NoOfPromotions(SKUs skus)
+        private int NoOfPromotions(OrderList skus)
         {
             int noOfPromotions = 0;
 
@@ -76,7 +76,7 @@ namespace PromotionEngine
             return noOfPromotions;
         }
 
-        private void UpdateSkus(SKUs skus)
+        private void UpdateSkus(OrderList skus)
         {
             foreach (var key in promotionType.Keys)
             {
@@ -84,7 +84,7 @@ namespace PromotionEngine
             }
         }
 
-        public int Apply(SKUs skus)
+        public int Apply(OrderList skus)
         {
             int noOfPromotions = NoOfPromotions(skus);
             return noOfPromotions * Price;
