@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromotionEngine", "Source\P
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CheckOut", "Source\CheckOut\CheckOut.csproj", "{49902200-B4DA-41BB-82D1-567B70605CEB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B370CF3C-CAF1-4948-92BB-EDC682DD554F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PromotionEngine_uTest", "Test\PromotionEngine_uTest\PromotionEngine_uTest.csproj", "{79452C37-0C26-4E78-89E9-EE78BF7B0659}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{49902200-B4DA-41BB-82D1-567B70605CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49902200-B4DA-41BB-82D1-567B70605CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49902200-B4DA-41BB-82D1-567B70605CEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79452C37-0C26-4E78-89E9-EE78BF7B0659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79452C37-0C26-4E78-89E9-EE78BF7B0659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79452C37-0C26-4E78-89E9-EE78BF7B0659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79452C37-0C26-4E78-89E9-EE78BF7B0659}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{79452C37-0C26-4E78-89E9-EE78BF7B0659} = {B370CF3C-CAF1-4948-92BB-EDC682DD554F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA31347D-3FE2-4918-BAA8-C2A874DC517A}
