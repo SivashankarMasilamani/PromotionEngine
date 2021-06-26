@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace PromotionEngine
+﻿namespace PromotionEngine
 {
     /// <summary>
+    /// Promotion for buying 'n' units of 'm' skuId 
     /// 3 * A = 130
     /// 2 * B = 40
-    /// n units of m skuId 
     /// </summary>
     public class Promotion : IPromotion
     {
@@ -21,9 +18,14 @@ namespace PromotionEngine
             Price = price;
         }
 
-        public int Apply(OrderList skus)
+        /// <summary>
+        /// Apply the promotion and reduce it from the quantity
+        /// </summary>
+        /// <param name="orderedItems"></param>
+        /// <returns></returns>
+        public int Apply(OrderList orderedItems)
         {
-            var sku = skus[Id];
+            var sku = orderedItems[Id];
             if (sku != null)
             {
                 var noOfPromotions = sku.Quantity / Quantity;
@@ -32,63 +34,5 @@ namespace PromotionEngine
             }
             return 0;
         }
-    }
-
-    /// <summary>
-    /// C + D
-    /// </summary>
-    public class CombinedPromotion : IPromotion
-    {
-        private int Price;
-
-        public CombinedPromotion(Dictionary<char, int> promotion, int price)
-        {
-            promotionType = promotion;
-            Price = price;
-        }
-
-        // 1C + 1D = 100
-        private Dictionary<char, int> promotionType;
-
-        private bool IsApplicable(OrderList skus)
-        {
-            foreach (var key in promotionType.Keys)
-            {
-                var sku = skus[key];
-               
-                if (sku == null || sku.Quantity < promotionType[key])
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private int NoOfPromotions(OrderList skus)
-        {
-            int noOfPromotions = 0;
-
-            if (IsApplicable(skus))
-            {
-                UpdateSkus(skus);
-                noOfPromotions++;
-            }
-            return noOfPromotions;
-        }
-
-        private void UpdateSkus(OrderList skus)
-        {
-            foreach (var key in promotionType.Keys)
-            {
-                skus[key].Quantity -= promotionType[key];
-            }
-        }
-
-        public int Apply(OrderList skus)
-        {
-            int noOfPromotions = NoOfPromotions(skus);
-            return noOfPromotions * Price;
-        }
-
     }
 }
