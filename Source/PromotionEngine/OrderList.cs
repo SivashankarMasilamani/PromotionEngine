@@ -4,7 +4,7 @@ namespace PromotionEngine
 {
     public class OrderList
     {
-        Dictionary<char, StoreKeepingUnit> SkuDictionary = new Dictionary<char, StoreKeepingUnit>();
+        internal Dictionary<char, StoreKeepingUnit> SkuDictionary = new Dictionary<char, StoreKeepingUnit>();
 
         /// <summary>
         /// Indexer to return a particular storekeepingunit of the provided id
@@ -27,6 +27,11 @@ namespace PromotionEngine
             // If exists, increase the quantity
             if (SkuDictionary.ContainsKey(sku.Id))
             {
+                if (SkuDictionary[sku.Id].UnitPrice != sku.UnitPrice)
+                {
+                    throw new System.Exception("Cannot modify the unit price");
+                }
+
                 SkuDictionary[sku.Id].Quantity += sku.Quantity;
             }
             else
